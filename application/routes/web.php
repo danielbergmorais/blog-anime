@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\CategoryController;
 
 Route::get('/', function () {
     return view('site.index');
@@ -38,10 +38,6 @@ Route::get('/admin/noticias', function () {
     return view('admin.pages.news');
 })->name('admin.noticias');
 
-Route::get('/admin/categorias', function () {
-    return view('admin.pages.categories');
-})->name('admin.categorias');
-
 Route::get('/admin/perfil', function () {
     return view('admin.pages.profile');
 })->name('admin.perfil');
@@ -49,3 +45,9 @@ Route::get('/admin/perfil', function () {
 Route::get('/admin/noticia/novo', function () {
     return view('admin.pages.news-form');
 })->name('admin.noticias.novo');
+
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('categories', CategoryController::class)->except(['show']);
+});
