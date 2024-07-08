@@ -50,7 +50,7 @@
 <section class="product spad">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-9">
                 <div class="product__page__content">
                     <div class="product__page__title">
                         <div class="row">
@@ -65,11 +65,11 @@
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="{{ asset('assets/site/img/zzz.webp') }}">
-                                    <div class="ep">06/07/2024</div>
+                                    <div class="ep">Jogos</div>
                                 </div>
                                 <div class="product__item__text">
                                     <ul>
-                                        <li>Jogos</li>
+                                        <li>06/07/2024</li>
                                     </ul>
                                     <h5><a href="#">Zenless Zone Zero, da HoYoverse, já está disponível</a></h5>
                                 </div>
@@ -78,11 +78,11 @@
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="{{ asset('assets/site/img/elden.webp') }}">
-                                    <div class="ep">06/07/2024</div>
+                                    <div class="ep">Jogos</div>
                                 </div>
                                 <div class="product__item__text">
                                     <ul>
-                                        <li>Jogos</li>
+                                        <li>06/07/2024</li>
                                     </ul>
                                     <h5><a href="#">Novo trailer cinematográfico de Elden Ring: Shadow of the Erdtree apresenta trama de Messmer e Miquella</a></h5>
                                 </div>
@@ -91,11 +91,11 @@
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="{{ asset('assets/site/img/metaphor.jpg') }}">
-                                    <div class="ep">06/07/2024</div>
+                                    <div class="ep">Jogos</div>
                                 </div>
                                 <div class="product__item__text">
                                     <ul>
-                                        <li>Jogos</li>
+                                        <li>06/07/2024</li>
                                     </ul>
                                     <h5><a href="#">Metaphor: ReFantazio, novo RPG dos criadores de Persona, ganha trailer estonteante e data de lançamento</a></h5>
                                 </div>

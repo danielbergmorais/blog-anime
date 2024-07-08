@@ -1,4 +1,4 @@
-<div class="col-lg-4 col-md-6 col-sm-8">
+<div class="col-lg-3 col-md-6 col-sm-8">
     <div class="product__sidebar">
         <div class="product__sidebar__view">
             <div class="section-title">

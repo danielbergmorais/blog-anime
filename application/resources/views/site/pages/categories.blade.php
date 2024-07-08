@@ -5,7 +5,7 @@
 <section class="product-page spad">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-9">
                 <div class="product__page__content">
                     <div class="product__page__title">
                         <div class="row">
@@ -20,13 +20,11 @@
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="{{ asset('assets/site/img/zzz.webp') }}">
-                                    <div class="ep">06/07/2024</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                    <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    <div class="ep">Jogos</div>
                                 </div>
                                 <div class="product__item__text">
                                     <ul>
-                                        <li>Jogos</li>
+                                        <li>06/07/2024</li>
                                     </ul>
                                     <h5><a href="#">Zenless Zone Zero, da HoYoverse, já está disponível</a></h5>
                                 </div>
@@ -35,7 +33,7 @@
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="{{ asset('assets/site/img/elden.webp') }}">
-                                    <div class="ep">06/07/2024</div>
+                                    <div class="ep">Jogos</div>
                                 </div>
                                 <div class="product__item__text">
                                     <ul>

@@ -487,6 +487,7 @@ ol {
 	-webkit-transition: all, 0.4s;
 	-o-transition: all, 0.4s;
 	transition: all, 0.4s;
+	text-shadow: 3px 2px 5px black;
 }
 
 .hero__text p {
@@ -499,6 +500,7 @@ ol {
 	-webkit-transition: all, 0.6s;
 	-o-transition: all, 0.6s;
 	transition: all, 0.6s;
+	text-shadow: 3px 2px 5px black;
 }
 
 .hero__text a {
@@ -656,7 +658,7 @@ ol {
 }
 
 .product__item__pic {
-	height: 325px;
+	height: 200px;
 	position: relative;
 	border-radius: 5px;
 }
