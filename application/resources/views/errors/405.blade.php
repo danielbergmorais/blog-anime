@@ -7,14 +7,14 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="login__form">
-                    <h1 class="text-white">404</h1>
-                    <h3>Ops! A página que você tentou acessar não existe!</h3>
+                    <h1 class="text-white">405</h1>
+                    <h3>Ops! Você tentou fazer algo que não deveria!</h3>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="login__register">
-                    <h3>Que tal tentar recomeçar?</h3>
-                    <a href="/" class="primary-btn">Voltar ao inicio</a>
+                    <h3>Que tal tentar outra coisa?</h3>
+                    <a href="javascript:void(0);" onclick="history.back();" class="primary-btn">Voltar</a>
                 </div>
             </div>
         </div>
