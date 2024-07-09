@@ -2,7 +2,7 @@
 
     <div class="sidenav-header">
         <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-        <a class="align-items-center d-flex m-0 navbar-brand text-wrap" href="{{ route('admin') }}">
+        <a class="align-items-center d-flex m-0 navbar-brand text-wrap" href="{{ route('posts.index') }}">
             <span class="ms-3 font-weight-bold">Anime</span>
         </a>
     </div>
@@ -16,17 +16,17 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Notícias</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ (Request::is('admin/noticias') ? 'active' : '') }} " href="{{ route('admin.noticias') }}">
+                <a class="nav-link {{ (Request::is('admin/posts','admin/posts/*') ? 'active' : '') }} " href="{{ route('posts.index') }}">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('admin/noticias') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
+                        <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('admin/posts','admin/posts/*') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
                     </div>
                     <span class="nav-link-text ms-1">Listagem</span>
                 </a>
             </li>
             <li class="nav-item pb-2">
-                <a class="nav-link {{ (Request::is('admin/categorias') ? 'active' : '') }}" href="{{ route('admin.categorias') }}">
+                <a class="nav-link {{ (Request::is('admin/categories','admin/categories/*') ? 'active' : '') }}" href="{{ route('categories.index') }}">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i style="font-size: 1rem;" class="fas fa-lg fa-tag ps-2 pe-2 text-center text-dark {{ (Request::is('admin/categorias') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
+                        <i style="font-size: 1rem;" class="fas fa-lg fa-tag ps-2 pe-2 text-center text-dark {{ (Request::is('admin/categories','admin/categories/*') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
                     </div>
                     <span class="nav-link-text ms-1">Categorias</span>
                 </a>
@@ -46,7 +46,11 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  " href="{{ url('static-sign-up') }}">
+                @if (Auth::check())
+                <form id="logout-form-side" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+                <a href="javascript:;" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form-side').submit();">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i style="font-size: 1rem;" class="fas fa-lg fa-arrow-right ps-2 pe-2 text-center text-dark text-dark" aria-hidden="true"></i>
@@ -54,6 +58,8 @@
                     </div>
                     <span class="nav-link-text ms-1">Sair</span>
                 </a>
+                @endif
+
             </li>
         </ul>
     </div>

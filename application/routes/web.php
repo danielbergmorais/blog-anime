@@ -2,50 +2,26 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\SiteController;
 
-Route::get('/', function () {
-    return view('site.index');
-});
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PostController;
 
-Route::get('/noticias', function () {
-    return view('site.pages.categories');
-});
 
-Route::get('/noticia', function () {
-    return view('site.pages.details');
-});
-
-Route::get('/categorias', function () {
-    return view('site.pages.categories');
-});
-
-Route::get('/login', function () {
-    return view('site.pages.login');
-});
-
-Route::get('/404', function () {
-    return view('errors.404');
-});
-
+/**********SITE***************/
+Route::get('/', [SiteController::class, 'index'])->name('site');
+Route::get('/posts/{category?}', [SiteController::class, 'posts'])->name('site.posts');
+Route::get('/post/{post}', [SiteController::class, 'post'])->name('site.post');
 
 /**********ADMIN***************/
-
-Route::get('/admin', function () {
-    return view('admin.pages.news');
-})->name('admin');
-
-Route::get('/admin/noticias', function () {
-    return view('admin.pages.news');
-})->name('admin.noticias');
-
-Route::get('/admin/categorias', function () {
-    return view('admin.pages.categories');
-})->name('admin.categorias');
-
 Route::get('/admin/perfil', function () {
     return view('admin.pages.profile');
 })->name('admin.perfil');
 
-Route::get('/admin/noticia/novo', function () {
-    return view('admin.pages.news-form');
-})->name('admin.noticias.novo');
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::resource('categories', CategoryController::class)->except(['show']);
+    Route::resource('posts', PostController::class)->except(['show']);
+});
+
+/**********AUTH***************/
+require __DIR__ . '/auth.php';
