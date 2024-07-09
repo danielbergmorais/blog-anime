@@ -16,21 +16,25 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             [
+                'id' => 1,
                 'name' => $name = 'Animes',
                 'slug' => Str::slug($name),
                 'active' => 1,
             ],
             [
+                'id' => 2,
                 'name' => $name = 'Jogos',
                 'slug' => Str::slug($name),
                 'active' => 1,
             ],
             [
+                'id' => 3,
                 'name' => $name = 'Filmes',
                 'slug' => Str::slug($name),
                 'active' => 1,
             ],
             [
+                'id' => 4,
                 'name' => $name = 'Series',
                 'slug' => Str::slug($name),
                 'active' => 0,
