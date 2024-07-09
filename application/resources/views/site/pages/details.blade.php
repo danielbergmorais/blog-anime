@@ -19,7 +19,7 @@
 
                 <div class="col-lg-8">
                     <div class="anime__details__text ">
-                        <p>{{ $post->content }}</p>
+                        <p>{!! nl2br($post->content) !!}</p>
 
                         <div class="anime__details__widget">
                             @if($post->youtube)

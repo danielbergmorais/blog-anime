@@ -7,6 +7,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\DB;
 
 class SiteController extends Controller
 {
@@ -18,9 +19,19 @@ class SiteController extends Controller
 
     public function index()
     {
+        $latestPosts = Post::select('id', 'category_id')
+            ->whereIn('id', function ($query) {
+                $query->select(DB::raw('MAX(id)'))
+                    ->from('posts')
+                    ->groupBy('category_id');
+            });
+
+        $posts = Post::whereIn('id', $latestPosts->pluck('id'))->limit(3)->with('category')->get();
+        $indexPosts = Post::whereNotIn('id', $latestPosts->pluck('id'))->limit(9)->get();
+
         return view('site.index', [
-            'bannerPosts' => Post::where('active', 1)->limit(3)->get(),
-            'indexPosts' => Post::where('active', 1)->limit(9)->offset(3)->get(),
+            'bannerPosts' => $posts,
+            'indexPosts' => $indexPosts,
         ]);
     }
 

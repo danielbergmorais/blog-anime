@@ -45,7 +45,7 @@ class Post extends Model
     {
         $user = Auth::user();
 
-        return $user && ($user->is_admin || $user->id === $this->user_id);
+        return $user && ($user->admin || $user->id === $this->user_id);
     }
 
     public function getRouteKeyName(): string
