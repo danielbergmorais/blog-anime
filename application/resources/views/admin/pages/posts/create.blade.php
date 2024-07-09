@@ -26,7 +26,7 @@
                             @csrf
                             <label>Titulo*</label>
                             <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Titulo" name="title" required>
+                                <input type="text" class="form-control" placeholder="Titulo" name="title" required value="{{ old('title') }}">
                                 @error('title')
                                 <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                 @enderror
@@ -34,7 +34,7 @@
 
                             <label>Subtitulo*</label>
                             <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Subtitulo" name="subtitle" required>
+                                <input type="text" class="form-control" placeholder="Subtitulo" name="subtitle" required value="{{ old('subtitle') }}">
                                 @error('subtitle')
                                 <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                 @enderror
@@ -86,7 +86,7 @@
 
                             <label>Conteúdo*</label>
                             <div class="mb-3">
-                                <textarea id="content" name="content" class="form-control" rows="10" cols="50"></textarea>
+                                <textarea id="content" name="content" class="form-control" rows="10" cols="50">{{ old('content') }}</textarea>
                                 @error('content')
                                 <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                 @enderror
