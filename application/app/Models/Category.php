@@ -47,6 +47,14 @@ class Category extends Model
 
     public function setNameAttribute(string $name): void
     {
-        $this->attributes['name'] = $name;
+        $this->attributes['name'] = 'Teste';
+    }
+
+    public function attributes()
+    {
+        return [
+            'name' => 'Nice Foo',
+            'active' => 'sadsa',
+        ];
     }
 }

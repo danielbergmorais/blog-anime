@@ -52,7 +52,7 @@
                                             <span class="badge badge-sm bg-gradient-{{$category->active ? 'success' : 'danger'}}"> {{$category->active ? 'Ativo' : 'Inativo'}} </span>
                                         </td>
                                         <td class="align-middle">
-                                            <a href="{{ route('categories.edit', $category) }}" class="text-secondary font-weight-bold text-xs pr-2" data-toggle="tooltip" data-original-title="Edit user">
+                                            <a href="{{ route('categories.edit', $category) }}" class="text-secondary font-weight-bold text-xs pr-2" data-toggle="tooltip" data-original-title="Edit Categoria">
                                                 <i class="fa fa-pencil text-xs"></i>
                                                 Editar
                                             </a>
@@ -60,7 +60,7 @@
                                             <form action="{{ route('categories.destroy', $category) }}" method="POST" id="delete-{{$category->id}}">
                                                 @csrf
                                                 @method('DELETE')
-                                                <a href="javascript:;" onclick="event.preventDefault(); document.getElementById('delete-{{$category->id}}').submit();" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                <a href="javascript:;" onclick="event.preventDefault(); document.getElementById('delete-{{$category->id}}').submit();" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Excluir Categoria">
                                                     <i class="fa fa-trash text-xs"></i>
                                                     Deletar
                                                 </a>
@@ -68,7 +68,6 @@
                                         </td>
                                     </tr>
                                     @endforeach
-
                                 </tbody>
                             </table>
                         </div>

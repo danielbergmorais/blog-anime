@@ -30,7 +30,7 @@ class CategoryController extends Controller
                 'category' => $category
             ]);
         } else {
-            return  Redirect::back()->withErrors(['msg' => 'Categoria não encontrada']);
+            return  Redirect::back()->with('error', 'Categoria não encontrada');
         }
     }
 
@@ -39,12 +39,15 @@ class CategoryController extends Controller
         $request->validate([
             'name' => 'required|string',
             'active' => 'required|integer',
+        ], [
+            'name' => 'O nome da categoria não pode ser vazio',
+            'active' => 'Selecione o status'
         ]);
 
         if (Category::create($request->all())) {
             return Redirect::route('categories.index');
         } else {
-            return Redirect::back()->with('error', 'Preecha todos os campo');
+            return Redirect::back()->with('error', 'Preecha todos os campos');
         }
     }
 
@@ -53,12 +56,15 @@ class CategoryController extends Controller
         $request->validate([
             'name' => 'required|string',
             'active' => 'required|integer',
+        ], [
+            'name' => 'O nome da categoria não pode ser vazio',
+            'active' => 'Selecione o status'
         ]);
 
         if ($category->update($request->all())) {
             return Redirect::route('categories.index');
         } else {
-            return Redirect::back()->withErrors(['msg' => 'Preecha todos os campos']);
+            return Redirect::back()->with('error', 'Preecha todos os campos');
         }
     }
 

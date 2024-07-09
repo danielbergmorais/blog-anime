@@ -22,5 +22,6 @@ class AppServiceProvider extends ServiceProvider
     {
         app()->useLangPath(base_path('lang'));
         Paginator::defaultView('admin.layouts.pagination.default');
+        Paginator::defaultSimpleView('site.layouts.simple-pagination');
     }
 }
