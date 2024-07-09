@@ -108,6 +108,10 @@ ol {
 	margin: 0;
 }
 
+section {
+	background: #0b0c2a;
+}
+
 /*---------------------
   Helper CSS
 -----------------------*/
@@ -946,6 +950,51 @@ ol {
 .product__pagination a i {
 	color: #b7b7b7;
 	font-size: 15px;
+}
+
+.pagination .page-item .page-link {
+	display: inline-block;
+	font-size: 15px;
+	color: #b7b7b7;
+	font-weight: 600;
+	height: 50px;
+	width: 50px;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	line-height: 48px;
+	text-align: center;
+	-webkit-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+	transition: all, 0.3s;
+	padding: 0 !important;
+}
+
+.pagination .page-item {}
+
+.pagination .page-item .page-link a:hover {
+	color: #ffffff;
+}
+
+.pagination .page-item .page-link.active {
+	border: 1px solid #ffffff;
+
+}
+
+.pagination .page-item .page-link a i {
+	color: #b7b7b7;
+	font-size: 15px;
+}
+
+.page-item.active .page-link {
+	background-color: #e53637 !important
+}
+
+.page-item .page-link {
+	background-color: transparent !important
+}
+
+.alert-danger {
+	max-width: 370px;
 }
 
 /*---------------------
