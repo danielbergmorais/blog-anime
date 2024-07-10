@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="/">
+                        <a href="{{ route('site') }}">
                             <img src="{{ asset('assets/site/img/logo.png') }}" alt="">
                         </a>
                     </div>
@@ -19,17 +19,15 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/">Categorias <span class="arrow_carrot-down"></span></a>
+                                <li><a href="{{ route('site') }}">Home</a></li>
+                                <li><a href="{{ route('site.posts') }}">Categorias <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
-                                        <li><a href="/categorias">Todas</a></li>
-                                        <li><a href="/animes">Animes</a></li>
-                                        <li><a href="/filmes">Filmes</a></li>
-                                        <li><a href="/jogos">Jogos</a></li>
+                                        @foreach($navCategories as $navCategory)
+                                        <li><a href="{{ route('site.posts', $navCategory) }}">{{ $navCategory->name }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
-                                <li><a href="/noticias">Notícias</a></li>
-                                <li><a href="/contato">Contato</a></li>
+                                <li><a href="{{ route('site.posts') }}">Notícias</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -37,7 +35,13 @@
                 <div class="col-lg-2">
                     <div class="header__right">
                         <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                        <a href="/login"><span class="icon_profile"></span></a>
+                        @auth
+                        <a href="{{ route('posts.index') }}"><span class="icon_profile"></span></a>
+                        @endauth
+                        @guest
+                        <a href="{{ route('login') }}"><span class="icon_profile"></span></a>
+                        @endguest
+
                     </div>
                 </div>
             </div>

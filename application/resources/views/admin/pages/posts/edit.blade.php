@@ -62,7 +62,7 @@
                                 @enderror
                             </div>
 
-                            <label>Imagem (Proporção 4:3) aqui</label>
+                            <label>Imagem (Proporção 16:9)</label>
                             <div class="mb-3">
                                 <div id="preview" class="d-block shadow border-radius-xl max-width-400 min-height-250" style="background-image: url('{{ asset('storage/blog/'. $post->file )}}'); background-position-y: 50%;  background-size: cover">
                                 </div>
