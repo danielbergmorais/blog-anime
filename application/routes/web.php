@@ -12,7 +12,7 @@ use App\Http\Controllers\Admin\PostController;
 Route::get('/', [SiteController::class, 'index'])->name('site');
 Route::get('/posts/{category?}', [SiteController::class, 'posts'])->name('site.posts');
 Route::get('/post/{post}', [SiteController::class, 'post'])->name('site.post');
-Route::get('/busca', [SiteController::class, 'search'])->name('site.search');
+Route::get('/resultados', [SiteController::class, 'search'])->name('site.search');
 
 /**********ADMIN***************/
 Route::get('/admin/perfil', function () {

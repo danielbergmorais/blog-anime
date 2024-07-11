@@ -44,7 +44,7 @@ class SiteController extends Controller
                 $q->where('name', 'like', '%' . $query . '%');
             })
             ->with('category')
-            ->get();
+            ->paginate(12);
 
         return view('site.pages.posts', [
             'category' => 'Busca',
