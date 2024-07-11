@@ -11,7 +11,7 @@
                         <div class="row">
                             <div class="col-lg-8 col-md-8 col-sm-6">
                                 <div class="section-title">
-                                    <h4>{{ isset($category->id) ? $category->name : 'Notícias' }}</h4>
+                                    <h4>{{ isset($category) ? $category : 'Notícias' }}</h4>
                                 </div>
                             </div>
                         </div>

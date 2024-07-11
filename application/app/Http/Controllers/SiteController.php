@@ -35,6 +35,23 @@ class SiteController extends Controller
         ]);
     }
 
+    public function search(Request $request)
+    {
+        $query = $request->input('busca');
+
+        $posts = Post::where('title', 'like', '%' . $query . '%')
+            ->orWhereHas('category', function ($q) use ($query) {
+                $q->where('name', 'like', '%' . $query . '%');
+            })
+            ->with('category')
+            ->get();
+
+        return view('site.pages.posts', [
+            'category' => 'Busca',
+            'posts' => $posts
+        ]);
+    }
+
     public function posts(Category $category)
     {
         if ($category->active) {
@@ -44,7 +61,7 @@ class SiteController extends Controller
         }
 
         return view('site.pages.posts', [
-            'category' => $category->active ? $category : null,
+            'category' => $category->active ? $category->name : null,
             'posts' => $posts
         ]);
     }
