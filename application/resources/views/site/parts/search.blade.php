@@ -4,6 +4,7 @@
          <div class="search-close-switch"><i class="icon_close"></i></div>
          <form class="search-model-form" action="{{ route ('site.search') }}">
              <input type="text" id="search-input" name="busca" placeholder="Buscar notícia.....">
+             <button type="submit" class="search-button"><i class="icon_search"></i></button>
          </form>
      </div>
  </div>
